@@ -52,7 +52,7 @@ pipeline {
         post {
             always{
                 echo "Slack Notifications"
-                slackSend channel: '#pipelines',
+                slackSend channel: '#notificaciones',
                 color: COLOR_MAP[currentBuild.currentResult],
                 message:"*${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More Info at: ${env.BUILD_URL}"
             }
